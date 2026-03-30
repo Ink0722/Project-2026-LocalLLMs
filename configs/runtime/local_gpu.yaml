@@ -1,0 +1,16 @@
+defaults:
+  torch_dtype: float16
+  device_map: auto
+
+generation:
+  do_sample: true
+  max_new_tokens: 512
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 50
+  repetition_penalty: 1.1
+
+download:
+  primary_source: mirror
+  mirror_endpoint: https://hf-mirror.com
+  fallback_source: official
