@@ -1,0 +1,28 @@
+name: deepseek_chat
+model_id: deepseek-ai/deepseek-llm-7b-chat
+task_type: chat_causal_lm
+loader_type: auto_causal_lm
+processor_type: tokenizer
+trust_remote_code: true
+
+runtime:
+  torch_dtype: float16
+  device_map: auto
+
+quantization:
+  enabled: true
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: float16
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+
+generation:
+  do_sample: true
+  max_new_tokens: 512
+  temperature: 0.7
+  top_p: 0.9
+  top_k: 50
+  repetition_penalty: 1.1
+
+prompt:
+  template_strategy: tokenizer_chat_template

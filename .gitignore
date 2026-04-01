@@ -31,6 +31,3 @@ dist/
 # Local environment files
 .env
 .env.*
-
-# Local model artifacts
-models/
